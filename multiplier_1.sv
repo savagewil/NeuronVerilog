@@ -3,9 +3,11 @@ module multiplier_1(
     input wire [31:0] constant,
     output reg [31:0] out);
 
+
+
     always_comb begin
-    	reg [63:0] mulTemp;
-    	reg [31:0] choiceUnsigned;
+        reg [63:0] mulTemp;
+        reg [31:0] choiceUnsigned;
         choiceUnsigned = constant;
         if (constant[31]) choiceUnsigned = (~constant) + 1;
         mulTemp = in * choiceUnsigned;
