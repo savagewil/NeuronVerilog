@@ -3,10 +3,8 @@ module threshold(
     output reg [31:0] out);
 
     always_comb begin
-        if (in < 0) out = 0;
-        else begin
-            out = 32'(in/64'b100000);
-        end
+        if (in[63] == 1) out = 32'h0;
+        else out = 32'(in/32);
     end
 
 
