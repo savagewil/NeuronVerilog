@@ -35,6 +35,6 @@ module multiplier(
     multiplier_1 m29(in[29], constant[29], out[29]);
     multiplier_1 m30(in[30], constant[30], out[30]);
     multiplier_1 m31(in[31], constant[31], out[31]);
-    multiplier_1 m32(32'hFFFFFFFE, constant[32] * -1, out[32]);
+    multiplier_1 m32(32'hFFFFFFFE, constant[32], out[32]);
      
 endmodule: multiplier

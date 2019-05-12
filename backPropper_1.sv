@@ -10,10 +10,10 @@ module backPropper_1(input wire [31:0] previous, input wire [31:0] weight,
 
     multiplier_1 MUL(previous, weight, multiplication);
 
-    assign backpropChange = signed'(weight) * signed'(backprop) * multiplication[31];
+    assign backpropChange = signed'(weight) * signed'(backprop) * (1 - multiplication[31]);
 
-    assign weightShift = signed'(previous) * signed'(backprop) *
-        multiplication[31] * trainingMul / trainingDiv;
+    assign weightShift = signed'(previous) * signed'(backprop) * (1 - multiplication[31]) *
+        trainingMul / (trainingDiv * 32'hFFFFFFFE);
 
     assign weightNew = weight + weightShift;
 
