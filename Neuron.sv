@@ -4,7 +4,6 @@ module neuron(input wire [31:0] [31:0] dendrites, input wire [32:0] [31:0] weigh
 
     wire [32:0] [31:0] weightedInputs;
     wire [63:0] weightedSum;
-    wire [31:0] out;
 
     multiplier MUL(dendrites, weights, weightedInputs);
     summer SUM(weightedInputs, weightedSum);

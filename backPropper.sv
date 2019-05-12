@@ -1,106 +1,106 @@
 // neuron model
-module backPropper(input wire [31:0] [31:0] dendrites, input wire [32:0] [31:0] weights,
-    input wire [31:0] backprop, input wire [31:0] trainingMul, input wire [31:0] trainingDiv,
-    output wire [31:0] [31:0] backpropChange, output wire [32:0] [31:0] weightNew);
+module backPropper(input wire [31:0] [31:0] bp_ds, input wire [32:0] [31:0] bp_w,
+    input wire [31:0] bp_bp, input wire [31:0]  bp_tm, input wire [31:0]  bp_td,
+    output wire [31:0] [31:0]  bp_bc, output wire [32:0] [31:0]  bp_wn);
 
-    backPropper_1 bp0(dendrites[0], weights[0], backprop, trainingMul, trainingDiv,
-        backpropChange[0], weightNew[0]);
+    backPropper_1 bp0(bp_ds[0], bp_w[0], bp_bp,  bp_tm,  bp_td,
+         bp_bc[0],  bp_wn[0]);
 
-    backPropper_1 bp1(dendrites[1], weights[1], backprop, trainingMul, trainingDiv,
-        backpropChange[1], weightNew[1]);
+    backPropper_1 bp1(bp_ds[1], bp_w[1], bp_bp,  bp_tm,  bp_td,
+         bp_bc[1],  bp_wn[1]);
 
-    backPropper_1 bp2(dendrites[2], weights[2], backprop, trainingMul, trainingDiv,
-        backpropChange[2], weightNew[2]);
+    backPropper_1 bp2(bp_ds[2], bp_w[2], bp_bp,  bp_tm,  bp_td,
+         bp_bc[2],  bp_wn[2]);
 
-    backPropper_1 bp3(dendrites[3], weights[3], backprop, trainingMul, trainingDiv,
-        backpropChange[3], weightNew[3]);
+    backPropper_1 bp3(bp_ds[3], bp_w[3], bp_bp,  bp_tm,  bp_td,
+         bp_bc[3],  bp_wn[3]);
 
-    backPropper_1 bp4(dendrites[4], weights[4], backprop, trainingMul, trainingDiv,
-        backpropChange[4], weightNew[4]);
+    backPropper_1 bp4(bp_ds[4], bp_w[4], bp_bp,  bp_tm,  bp_td,
+         bp_bc[4],  bp_wn[4]);
 
-    backPropper_1 bp5(dendrites[5], weights[5], backprop, trainingMul, trainingDiv,
-        backpropChange[5], weightNew[5]);
+    backPropper_1 bp5(bp_ds[5], bp_w[5], bp_bp,  bp_tm,  bp_td,
+         bp_bc[5],  bp_wn[5]);
 
-    backPropper_1 bp6(dendrites[6], weights[6], backprop, trainingMul, trainingDiv,
-        backpropChange[6], weightNew[6]);
+    backPropper_1 bp6(bp_ds[6], bp_w[6], bp_bp,  bp_tm,  bp_td,
+         bp_bc[6],  bp_wn[6]);
 
-    backPropper_1 bp7(dendrites[7], weights[7], backprop, trainingMul, trainingDiv,
-        backpropChange[7], weightNew[7]);
+    backPropper_1 bp7(bp_ds[7], bp_w[7], bp_bp,  bp_tm,  bp_td,
+         bp_bc[7],  bp_wn[7]);
 
-    backPropper_1 bp8(dendrites[8], weights[8], backprop, trainingMul, trainingDiv,
-        backpropChange[8], weightNew[8]);
+    backPropper_1 bp8(bp_ds[8], bp_w[8], bp_bp,  bp_tm,  bp_td,
+         bp_bc[8],  bp_wn[8]);
 
-    backPropper_1 bp9(dendrites[9], weights[9], backprop, trainingMul, trainingDiv,
-        backpropChange[9], weightNew[9]);
+    backPropper_1 bp9(bp_ds[9], bp_w[9], bp_bp,  bp_tm,  bp_td,
+         bp_bc[9],  bp_wn[9]);
 
-    backPropper_1 bp10(dendrites[10], weights[10], backprop, trainingMul, trainingDiv,
-        backpropChange[10], weightNew[10]);
+    backPropper_1 bp10(bp_ds[10], bp_w[10], bp_bp,  bp_tm,  bp_td,
+         bp_bc[10],  bp_wn[10]);
 
-    backPropper_1 bp11(dendrites[11], weights[11], backprop, trainingMul, trainingDiv,
-        backpropChange[11], weightNew[11]);
+    backPropper_1 bp11(bp_ds[11], bp_w[11], bp_bp,  bp_tm,  bp_td,
+         bp_bc[11],  bp_wn[11]);
 
-    backPropper_1 bp12(dendrites[12], weights[12], backprop, trainingMul, trainingDiv,
-        backpropChange[12], weightNew[12]);
+    backPropper_1 bp12(bp_ds[12], bp_w[12], bp_bp,  bp_tm,  bp_td,
+         bp_bc[12],  bp_wn[12]);
 
-    backPropper_1 bp13(dendrites[13], weights[13], backprop, trainingMul, trainingDiv,
-        backpropChange[13], weightNew[13]);
+    backPropper_1 bp13(bp_ds[13], bp_w[13], bp_bp,  bp_tm,  bp_td,
+         bp_bc[13],  bp_wn[13]);
 
-    backPropper_1 bp14(dendrites[14], weights[14], backprop, trainingMul, trainingDiv,
-        backpropChange[14], weightNew[14]);
+    backPropper_1 bp14(bp_ds[14], bp_w[14], bp_bp,  bp_tm,  bp_td,
+         bp_bc[14],  bp_wn[14]);
 
-    backPropper_1 bp15(dendrites[15], weights[15], backprop, trainingMul, trainingDiv,
-        backpropChange[15], weightNew[15]);
+    backPropper_1 bp15(bp_ds[15], bp_w[15], bp_bp,  bp_tm,  bp_td,
+         bp_bc[15],  bp_wn[15]);
 
-    backPropper_1 bp16(dendrites[16], weights[16], backprop, trainingMul, trainingDiv,
-        backpropChange[16], weightNew[16]);
+    backPropper_1 bp16(bp_ds[16], bp_w[16], bp_bp,  bp_tm,  bp_td,
+         bp_bc[16],  bp_wn[16]);
 
-    backPropper_1 bp17(dendrites[17], weights[17], backprop, trainingMul, trainingDiv,
-        backpropChange[17], weightNew[17]);
+    backPropper_1 bp17(bp_ds[17], bp_w[17], bp_bp,  bp_tm,  bp_td,
+         bp_bc[17],  bp_wn[17]);
 
-    backPropper_1 bp18(dendrites[18], weights[18], backprop, trainingMul, trainingDiv,
-        backpropChange[18], weightNew[18]);
+    backPropper_1 bp18(bp_ds[18], bp_w[18], bp_bp,  bp_tm,  bp_td,
+         bp_bc[18],  bp_wn[18]);
 
-    backPropper_1 bp19(dendrites[19], weights[19], backprop, trainingMul, trainingDiv,
-        backpropChange[19], weightNew[19]);
+    backPropper_1 bp19(bp_ds[19], bp_w[19], bp_bp,  bp_tm,  bp_td,
+         bp_bc[19],  bp_wn[19]);
 
-    backPropper_1 bp20(dendrites[20], weights[20], backprop, trainingMul, trainingDiv,
-        backpropChange[20], weightNew[20]);
+    backPropper_1 bp20(bp_ds[20], bp_w[20], bp_bp,  bp_tm,  bp_td,
+         bp_bc[20],  bp_wn[20]);
 
-    backPropper_1 bp21(dendrites[21], weights[21], backprop, trainingMul, trainingDiv,
-        backpropChange[21], weightNew[21]);
+    backPropper_1 bp21(bp_ds[21], bp_w[21], bp_bp,  bp_tm,  bp_td,
+         bp_bc[21],  bp_wn[21]);
 
-    backPropper_1 bp22(dendrites[22], weights[22], backprop, trainingMul, trainingDiv,
-        backpropChange[22], weightNew[22]);
+    backPropper_1 bp22(bp_ds[22], bp_w[22], bp_bp,  bp_tm,  bp_td,
+         bp_bc[22],  bp_wn[22]);
 
-    backPropper_1 bp23(dendrites[23], weights[23], backprop, trainingMul, trainingDiv,
-        backpropChange[23], weightNew[23]);
+    backPropper_1 bp23(bp_ds[23], bp_w[23], bp_bp,  bp_tm,  bp_td,
+         bp_bc[23],  bp_wn[23]);
 
-    backPropper_1 bp24(dendrites[24], weights[24], backprop, trainingMul, trainingDiv,
-        backpropChange[24], weightNew[24]);
+    backPropper_1 bp24(bp_ds[24], bp_w[24], bp_bp,  bp_tm,  bp_td,
+         bp_bc[24],  bp_wn[24]);
 
-    backPropper_1 bp25(dendrites[25], weights[25], backprop, trainingMul, trainingDiv,
-        backpropChange[25], weightNew[25]);
+    backPropper_1 bp25(bp_ds[25], bp_w[25], bp_bp,  bp_tm,  bp_td,
+         bp_bc[25],  bp_wn[25]);
 
-    backPropper_1 bp26(dendrites[26], weights[26], backprop, trainingMul, trainingDiv,
-        backpropChange[26], weightNew[26]);
+    backPropper_1 bp26(bp_ds[26], bp_w[26], bp_bp,  bp_tm,  bp_td,
+         bp_bc[26],  bp_wn[26]);
 
-    backPropper_1 bp27(dendrites[27], weights[27], backprop, trainingMul, trainingDiv,
-        backpropChange[27], weightNew[27]);
+    backPropper_1 bp27(bp_ds[27], bp_w[27], bp_bp,  bp_tm,  bp_td,
+         bp_bc[27],  bp_wn[27]);
 
-    backPropper_1 bp28(dendrites[28], weights[28], backprop, trainingMul, trainingDiv,
-        backpropChange[28], weightNew[28]);
+    backPropper_1 bp28(bp_ds[28], bp_w[28], bp_bp,  bp_tm,  bp_td,
+         bp_bc[28],  bp_wn[28]);
 
-    backPropper_1 bp29(dendrites[29], weights[29], backprop, trainingMul, trainingDiv,
-        backpropChange[29], weightNew[29]);
+    backPropper_1 bp29(bp_ds[29], bp_w[29], bp_bp,  bp_tm,  bp_td,
+         bp_bc[29],  bp_wn[29]);
 
-    backPropper_1 bp30(dendrites[30], weights[30], backprop, trainingMul, trainingDiv,
-        backpropChange[30], weightNew[30]);
+    backPropper_1 bp30(bp_ds[30], bp_w[30], bp_bp,  bp_tm,  bp_td,
+         bp_bc[30],  bp_wn[30]);
 
-    backPropper_1 bp31(dendrites[31], weights[31], backprop, trainingMul, trainingDiv,
-        backpropChange[31], weightNew[31]);
+    backPropper_1 bp31(bp_ds[31], bp_w[31], bp_bp,  bp_tm,  bp_td,
+         bp_bc[31],  bp_wn[31]);
 
-    backPropper_t bpthresh(weights[32], backprop, trainingMul, trainingDiv,
-        weightNew[32]);
+    backPropper_t bpthresh(bp_w[32], bp_bp,  bp_tm,  bp_td,
+         bp_wn[32]);
 
 endmodule: backPropper
 

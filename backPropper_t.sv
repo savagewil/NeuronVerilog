@@ -1,17 +1,17 @@
 // neuron model
-module backPropper_t(input wire [31:0] weight,
-    input wire [31:0] backprop, input wire [31:0] trainingMul, input wire [31:0] trainingDiv,
-    output wire [31:0] weightNew);
+module backPropper_t(input wire [31:0] bpt_w,
+    input wire [31:0] bpt_bp, input wire [31:0] bpt_tm, input wire [31:0] bpt_td,
+    output wire [31:0] bpt_wn);
 
-    wire [31:0] multiplication;
-    wire [31:0] weightShift;
+    wire [31:0] bpt_multiplication;
+    wire [31:0] bpt_ws;
 
-    multiplier_1 MUL(32'hFFFFFFFE, weight, multiplication);
+    multiplier_1 MUL(32'hFFFFFFFE, bpt_w, bpt_multiplication);
 
-    assign weightShift = signed'(1) * signed'(backprop) * (1 - multiplication[31])
-        * trainingMul / trainingDiv;
+    assign bpt_ws = signed'(1) * signed'(bpt_bp) * (1 - bpt_multiplication[31])
+        * bpt_tm / bpt_td;
 
-    assign weightNew = weight + weightShift;
+    assign bpt_wn = bpt_w + bpt_ws;
 
 endmodule: backPropper_t
 
