@@ -14,6 +14,7 @@ module testing_tb();
 	always @(posedge clk)
 		count = count + 1;
 
+	multiplier_1 MUT(32'h7FFFFFFF, count, f);
 endmodule
 
 		
