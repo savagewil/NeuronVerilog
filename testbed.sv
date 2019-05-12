@@ -6,48 +6,45 @@ module testing_tb();
     reg [32:0] [31:0] constant;
     reg [31:0] [31:0] in;
 
-
-    wire [32:0] [31:0] f;
-    wire [63:0] o;
     wire [31:0] out;
 
     initial begin
         clk = 1;
         count = -1;
 
-        constant[0] = 4;
-        constant[1] = 4;
-        constant[2] = 4;
-        constant[3] = 4;
-        constant[4] = 4;
-        constant[5] = 4;
-        constant[6] = 4;
-        constant[7] = 4;
-        constant[8] = 4;
-        constant[9] = 4;
-        constant[10] = 4;
-        constant[11] = 4;
-        constant[12] = 4;
-        constant[13] = 4;
-        constant[14] = 4;
-        constant[15] = 4;
-        constant[16] = 4;
-        constant[17] = 4;
-        constant[18] = 4;
-        constant[19] = 4;
-        constant[20] = 4;
-        constant[21] = 4;
-        constant[22] = 4;
-        constant[23] = 4;
-        constant[24] = 4;
-        constant[25] = 4;
-        constant[26] = 4;
-        constant[27] = 4;
-        constant[28] = 4;
-        constant[29] = 4;
-        constant[30] = 4;
-        constant[31] = 4;
-        constant[32] = 4;
+        constant[0] = 8;
+        constant[1] = 8;
+        constant[2] = 8;
+        constant[3] = 8;
+        constant[4] = 8;
+        constant[5] = 8;
+        constant[6] = 8;
+        constant[7] = 8;
+        constant[8] = 8;
+        constant[9] = 8;
+        constant[10] = 8;
+        constant[11] = 8;
+        constant[12] = 8;
+        constant[13] = 8;
+        constant[14] = 8;
+        constant[15] = 8;
+        constant[16] = 8;
+        constant[17] = 8;
+        constant[18] = 8;
+        constant[19] = 8;
+        constant[20] = 8;
+        constant[21] = 8;
+        constant[22] = 8;
+        constant[23] = 8;
+        constant[24] = 8;
+        constant[25] = 8;
+        constant[26] = 8;
+        constant[27] = 8;
+        constant[28] = 8;
+        constant[29] = 8;
+        constant[30] = 8;
+        constant[31] = 8;
+        constant[32] = 8;
     end
     always #5 clk = ~clk;
     always @(posedge clk) begin
@@ -85,9 +82,8 @@ module testing_tb();
         in[30] = count * 32'h3fffffff;
         in[31] = count * 32'h3fffffff;
     end
-    multiplier MUL(in, constant, f);
-    summer SUM(f, o);
-    threshold THR(o, out);
+    
+    neuron NRN(in, constant, out);
 
 endmodule
 
