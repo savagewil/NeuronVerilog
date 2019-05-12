@@ -1,5 +1,5 @@
 module learningNeuron(input wire ln_clock, input wire [31:0] [31:0] ln_dendrites,
-    input wire [31:0] ln_backprop, input wire [31:0] ln_trainingMul,
+    input wire [63:0] ln_backprop, input wire [31:0] ln_trainingMul,
     input wire [31:0] ln_trainingDiv, output wire [31:0] [31:0] ln_backpropChange,
     output reg [31:0] ln_axon);
 
@@ -43,11 +43,11 @@ module learningNeuron(input wire ln_clock, input wire [31:0] [31:0] ln_dendrites
         ln_weightsNew = ln_weights;
     end
 
-//    always @(posedge clock) begin
-//
-//        weights = weightsNew;
-//
-//    end
+    always @(posedge ln_clock) begin
+
+        ln_weights = ln_weightsNew;
+
+    end
 
 
     neuron n(ln_dendrites, ln_weights, ln_axon);

@@ -9,15 +9,15 @@ module testing_tb();
     reg [31:0] [31:0] back;
 
     reg [31:0] out;
-    reg [31:0] backpropStart;
+    reg [63:0] backpropStart;
 
-    learningNeuron LN(clk, in, backpropStart,  32'h1,  32'h1,
+    learningNeuron LN(clk, in, backpropStart,  32'h10,  32'h1,
         back, out);
 
     initial begin
         clk = 1;
         count = -1;
-        
+
         backpropStart = 1;
 
         startWeights[0] = 8;
@@ -91,7 +91,7 @@ module testing_tb();
         in[31] = 0;
     end
 
-    //backPropperStart bps(32'hFFFFFFFE, out, backpropStart);
+    backPropperStart bps(32'hFFF, out, backpropStart);
 
 endmodule
 

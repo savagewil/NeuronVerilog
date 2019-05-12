@@ -1,8 +1,8 @@
 // neuron model
-module backPropperStart(input wire [31:0] expected, input wire [31:0] actual,
-    output wire [31:0] backpropChange);
+module backPropperStart(input wire [31:0] bps_expected, input wire [31:0] bps_actual,
+    output wire [63:0] bps_bpc);
 
-    assign backpropChange = 2 * (actual - expected);
+    assign bps_bpc = 64'(signed'(2 * ( unsigned'(bps_expected) - unsigned'(bps_actual))));
 
 endmodule: backPropperStart
 

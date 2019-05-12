@@ -1,6 +1,6 @@
 // neuron model
 module backPropper_1(input wire [31:0] bp1_p, input wire [31:0] bp1_w,
-    input wire [31:0] bp1_bp, input wire [31:0] bp1_tm, input wire [31:0] bp1_td,
+    input wire [63:0] bp1_bp, input wire [31:0] bp1_tm, input wire [31:0] bp1_td,
     output wire [31:0] bp1_bpc, output wire [31:0] bp1_wn);
 
     wire [31:0] bp1_multiplication;
