@@ -6,7 +6,7 @@ module backPropper_t(input wire [31:0] bpt_w,
     wire [31:0] bpt_multiplication;
     wire [31:0] bpt_ws;
 
-    multiplier_1 MUL(32'hFFFFFFFE, bpt_w, bpt_multiplication);
+    multiplier_1 MUL(32'hFFFFFFFE, bpt_w, 1, bpt_multiplication);
 
     assign bpt_ws = signed'(1) * signed'(bpt_bp) * (1 - bpt_multiplication[31])
         * bpt_tm / bpt_td;
