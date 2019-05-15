@@ -12,8 +12,8 @@ module learningNeuron(input wire ln_clock,
 
     initial begin
 //        ln_weights = ln_startweights;
-        ln_weights[0] = 0;
-        ln_weights[1] = 0;
+        ln_weights[0] = 1.1;
+        ln_weights[1] = -1.1;
         ln_weights[2] = 0;
         ln_weights[3] = 0;
         ln_weights[4] = 0;

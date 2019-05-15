@@ -59,31 +59,31 @@ module testing_tb();
     always #3 clk = ~clk;
     always @(posedge clk) begin
         count = count+1;
-        in1[0] = 1.0 * count[0];
-        in1[1] = 1.0 * count[1];
-        in2[0] = 1.0 * count[0];
-        in2[1] = 1.0 * count[1];
+        in3[0] = 1.0 * count[0];
+        in3[1] = 1.0 * count[1];
+//        in2[0] = 1.0 * count[0];
+//        in2[1] = 1.0 * count[1];
     end
 
 
-    learningNeuron LN1(clk,
-        in1,
-        enabled,
-        back3[0],
-        1.0,
-        back1,
-        out1);
+//    learningNeuron LN1(clk,
+//        in1,
+//        enabled,
+//        back3[0],
+//        1.0,
+//        back1,
+//        out1);
+//
+//    learningNeuron LN2(clk,
+//        in2,
+//        enabled,
+//        back3[1],
+//        1.0,
+//        back2,
+//        out2);
 
-    learningNeuron LN2(clk,
-        in2,
-        enabled,
-        back3[1],
-        1.0,
-        back2,
-        out2);
-
-    assign in3[0] = out1;
-    assign in3[0] = out2;
+//    assign in3[0] = out1;
+//    assign in3[1] = out2;
 
     learningNeuron LN3(clk,
         in3,
@@ -104,7 +104,7 @@ module testing_tb();
 
 
     real expected;
-    assign expected = count[0] != count[1] ? 1.0:0.0;
+    assign expected = count[1:0] == 3  ? 1.0:0.0;
     backPropperStart bps(expected, out3, backpropStart);
 
 endmodule
