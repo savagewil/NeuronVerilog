@@ -1,6 +1,6 @@
 // neuron model
-module backPropperStart(real bps_expected, real bps_actual,
-    real bps_bpc);
+module backPropperStart(input real bps_expected, input real bps_actual,
+    output real bps_bpc);
 
     assign bps_bpc = 2.0 * (bps_expected - bps_actual);
 

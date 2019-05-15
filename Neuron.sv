@@ -4,7 +4,7 @@ module neuron(input real n_dendrites[31:0] , input real n_weights [32:0],
     output real n_axon);
 
     real n_weightedInputs[32:0];
-    wire real n_weightedSum;
+    real n_weightedSum;
 
     multiplier MUL(n_dendrites, n_weights,
         n_enabled,

@@ -36,6 +36,6 @@ module multiplier(
     multiplier_1 m29(mul_in[29], mul_weight[29], mul_enable[29], mul_out[29]);
     multiplier_1 m30(mul_in[30], mul_weight[30], mul_enable[30], mul_out[30]);
     multiplier_1 m31(mul_in[31], mul_weight[31], mul_enable[31], mul_out[31]);
-    multiplier_1 m32(32'hFFFFFFFE, mul_weight[32], 1, mul_out[32]);
+    multiplier_1 m32(1.0, mul_weight[32], 1'h1, mul_out[32]);
      
 endmodule: multiplier

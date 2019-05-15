@@ -92,8 +92,13 @@ module learningNeuron(input wire ln_clock,
     neuron n(ln_dendrites, ln_weights,
         ln_enabled,
         ln_axon);
-    backPropper bp(ln_dendrites, ln_weights, ln_axon, ln_training_ratio,
-        ln_trainingDiv, ln_backpropChange, ln_weightsNew);
+    backPropper bp(ln_dendrites,
+        ln_weights,
+        ln_axon,
+        ln_backprop,
+        ln_training_ratio,
+        ln_backpropChange,
+        ln_weightsNew);
 
 
 

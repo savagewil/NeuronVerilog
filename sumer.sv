@@ -4,9 +4,9 @@ module summer(
 
 
     real l1[15:0];
-    wire l2[7:0];
-    wire l3[3:0];
-    wire l4[1:0];
+    real l2[7:0];
+    real l3[3:0];
+    real l4[1:0];
     real almostThere;
 
     assign l1[0] = s_in[0]+s_in[1];
