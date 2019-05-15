@@ -1,8 +1,8 @@
 module multiplier(
-    input wire [31:0] [31:0] mul_in,
-    input wire [32:0] [31:0] mul_weight,
+    input real mul_in[31:0],
+    input real mul_weight[32:0],
     input wire [31:0] mul_enable,
-    output wire [32:0] [31:0] mul_out);
+    output real mul_out[32:0]);
 
     multiplier_1 m0(mul_in[0], mul_weight[0], mul_enable[0], mul_out[0]);
     multiplier_1 m1(mul_in[1], mul_weight[1], mul_enable[1], mul_out[1]);

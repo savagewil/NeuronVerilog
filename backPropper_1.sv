@@ -1,19 +1,19 @@
 // neuron model
-module backPropper_1(input wire [31:0] bp1_p, input wire [31:0] bp1_w,
-    input wire [63:0] bp1_bp, input wire [31:0] bp1_tm, input wire [31:0] bp1_td,
-    output wire [31:0] bp1_bpc, output wire [31:0] bp1_wn);
+module backPropper_1(input real bp1_previous, input real bp1_weight,
+    input real bp1_axon, input real bp1_back_prop,
+    input real bp1_ratio,
+    output real bp1_bp1_back_prop_new, output real bp1_weight_new);
 
-    wire [31:0] bp1_multiplication;
-    wire [31:0] bp1_weightShift;
+    real bp1_sig = (1.0 - bp1_axon) * bp1_axon;
+    real bp1_current_shift = bp1_sig * bp1_back_prop;
+    
+    assign bp1_bp1_back_prop_new = bp1_current_shift * bp1_weight;
+    
+    real bp1_weightshift = current_shift * p * bp1_ratio;
 
-    multiplier_1 MUL(bp1_p, bp1_w, 1, bp1_multiplication);
-//
-    assign bp1_bpc = signed'(bp1_w)*signed'(bp1_bp)*(1-bp1_multiplication[31]);
-//
-    assign bp1_weightShift = signed'(bp1_p)*signed'(bp1_bp)*(1-bp1_multiplication[31])*
-        bp1_tm/(bp1_td*32'hFFFFFFFE);
-//
-    assign bp1_wn = bp1_w+bp1_weightShift;
+    assign bp1_weight_new = bp1_weight + bp1_weightshift;
+    
+    
 
 endmodule: backPropper_1
 

@@ -1,13 +1,13 @@
-module learningNeuron(input wire ln_clock, input wire [31:0] [31:0] ln_dendrites,
-    input reg [31:0] ln_enabled,
-    input wire [63:0] ln_backprop,
-    input wire [31:0] ln_trainingMul, input wire [31:0] ln_trainingDiv,
-    output wire [31:0] [31:0] ln_backpropChange,
-    output reg [31:0] ln_axon);
+module learningNeuron(input wire ln_clock,
+    input real ln_dendrites[31:0],
+    input wire [31:0] ln_enabled,
+    input real ln_backprop,
+    input real ln_training_ratio,
+    output real ln_backpropChange[31:0],
+    output real ln_axon);
 
-    reg [32:0] [31:0] ln_weights;
-    reg [32:0] [31:0] ln_weightsNew;
-    reg [32:0] [31:0] ln_weightsNew_fake;
+    real ln_weights[32:0];
+    real ln_weightsNew[32:0];
 
 
     initial begin
@@ -92,7 +92,7 @@ module learningNeuron(input wire ln_clock, input wire [31:0] [31:0] ln_dendrites
     neuron n(ln_dendrites, ln_weights,
         ln_enabled,
         ln_axon);
-    backPropper bp(ln_dendrites, ln_weights, ln_backprop, ln_trainingMul,
+    backPropper bp(ln_dendrites, ln_weights, ln_axon, ln_training_ratio,
         ln_trainingDiv, ln_backpropChange, ln_weightsNew);
 
 

@@ -1,10 +1,10 @@
 // neuron model
-module neuron(input wire [31:0] [31:0] n_dendrites, input wire [32:0] [31:0] n_weights,
+module neuron(input real n_dendrites[31:0] , input real n_weights [32:0],
     input wire [31:0] n_enabled,
-    output wire [31:0] n_axon);
+    output real n_axon);
 
-    wire [32:0] [31:0] n_weightedInputs;
-    wire [63:0] n_weightedSum;
+    real n_weightedInputs[32:0];
+    wire real n_weightedSum;
 
     multiplier MUL(n_dendrites, n_weights,
         n_enabled,
