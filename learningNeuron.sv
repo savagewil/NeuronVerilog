@@ -87,6 +87,9 @@ module learningNeuron(input wire ln_clock,
 
     end
 
+    real test_weight2;
+    assign test_weight2 = ln_weights[0];
+
 
 
     neuron n(ln_dendrites, ln_weights,

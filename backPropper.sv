@@ -6,6 +6,8 @@ module backPropper(input real bp_dendrites [31:0], input real bp_weights [32:0],
     output real bp_backprop_change [31:0],
     output real bp_weights_new [32:0]);
 
+    real test_weight;
+    assign test_weight = bp_weights[0];
     backPropper_1 bp0(bp_dendrites[0],
         bp_weights[0],
         bp_axon,
